@@ -4,6 +4,7 @@ import { HomeBox } from "@/components/homeBox";
 import { Button } from "@/components/button";
 import { useState } from "react";
 import questions from "@/questions";
+import { RecommendDistros } from "@/components/distroRecommend";
 
 export default function QuizPage() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -32,25 +33,29 @@ export default function QuizPage() {
       return {
         title: "🐧 Go for it!",
         description: "You're well-suited for Linux! Your technical comfort, flexibility, and willingness to learn make you an ideal candidate for switching.",
-        color: "text-green-400"
+        color: "text-green-400",
+        showDistros: true
       };
     } else if (totalScore >= 5) {
       return {
         title: "🤔 Consider carefully",
         description: "Linux could work for you, but consider your specific needs. Maybe try a beginner-friendly distribution or dual-boot first.",
-        color: "text-yellow-400"
+        color: "text-yellow-400",
+        showDistros: true
       };
     } else if (totalScore >= -5) {
       return {
         title: "⚠️ Proceed with caution",
         description: "Linux might be challenging for your current needs. Consider staying with your current OS or waiting until your situation changes.",
-        color: "text-orange-400"
+        color: "text-orange-400",
+        showDistros: false
       };
     } else {
       return {
         title: "🚫 Probably not yet",
         description: "Based on your responses, Linux might not be the best fit right now. Your current setup seems to serve you better.",
-        color: "text-red-400"
+        color: "text-red-400",
+        showDistros: false
       };
     }
   };
@@ -64,6 +69,7 @@ export default function QuizPage() {
   if (showResults) {
     const result = calculateResult();
     const totalScore = Object.values(answers).reduce((sum, score) => sum + score, 0);
+    console.log(result.showDistros)
 
     return (
       <HomeBox>
@@ -81,6 +87,9 @@ export default function QuizPage() {
             <p className="text-sm text-gray-400">
               Your score: {totalScore} / {questions.length * 2}
             </p>
+
+            {result.showDistros && <RecommendDistros/>}
+
           </div>
 
           <div className="space-y-2">
