@@ -1,134 +1,134 @@
 const questions = [
   {
     id: 1,
-    question: "Gaming Compatibility",
-    description: "Do you regularly play the latest AAA games or titles with aggressive anti-cheat systems (like Valorant, Call of Duty, Fortnite)?",
+    question: "Modern Gaming Requirements",
+    description: "How often do you play AAA titles that use kernel level anti-cheat systems (e.g. Valorant, Fortnite)?",
     options: [
-      { value: "never", label: "I don't game at all", score: 2 },
-      { value: "casual", label: "I play older/indie games occasionally", score: 1 },
-      { value: "moderate", label: "I play some modern games but not competitively", score: 0 },
-      { value: "heavy", label: "I regularly play latest AAA/competitive games", score: -2 }
+      { value: "never",      label: "I don't game",                        score: 2 },
+      { value: "casual",     label: "Occasional older/indie gaming",      score: 1 },
+      { value: "regular",    label: "Regular modern gaming (non-competitive)", score: 0 },
+      { value: "competitive",label: "Competitive AAA gaming",            score: -2 }
     ]
   },
   {
     id: 2,
-    question: "Specific Software Reliance",
-    description: "Are there one or two critical, niche applications (e.g., specialized engineering software, Adobe Creative Suite, particular accounting software) that you absolutely cannot do your work without, and they are only available on Windows/macOS?",
+    question: "Proprietary Software Dependence",
+    description: "Do you rely on critical Windows/macOS-only apps with no Linux equivalent?",
     options: [
-      { value: "none", label: "No critical Windows/macOS-only software", score: 2 },
-      { value: "alternatives", label: "I use some but open-source alternatives exist", score: 1 },
-      { value: "few", label: "I have 1-2 critical proprietary applications", score: -1 },
-      { value: "many", label: "My workflow depends on multiple proprietary apps", score: -2 }
+      { value: "none",        label: "No critical proprietary apps",       score: 2 },
+      { value: "alternatives",label: "Use apps with viable open-source alternatives", score: 1 },
+      { value: "few",         label: "1–2 critical proprietary apps",       score: -1 },
+      { value: "many",        label: "Multiple proprietary apps",           score: -2 }
     ]
   },
   {
     id: 3,
-    question: "Hardware Compatibility",
-    description: "Do you have very new or very old/obscure hardware components (e.g., specific Wi-Fi adapters, printers, graphics cards) that you know can sometimes have limited driver support outside of Windows?",
+    question: "Hardware Support",
+    description: "Do you use very new, very old or obscure hardware that may lack Linux drivers?",
     options: [
-      { value: "standard", label: "Standard, well-supported hardware", score: 2 },
-      { value: "mostly", label: "Mostly standard with one or two newer components", score: 1 },
-      { value: "some", label: "Some newer or specialized hardware", score: 0 },
-      { value: "lots", label: "Lots of new/obscure hardware", score: -2 }
+      { value: "standard", label: "All standard, well-supported hardware", score: 2 },
+      { value: "minor",    label: "One or two newer/odd components",      score: 1 },
+      { value: "some",     label: "Some specialized/new hardware",        score: 0 },
+      { value: "many",     label: "Lots of exotic hardware",              score: -2 }
     ]
   },
   {
     id: 4,
-    question: "Learning Curve Tolerance",
-    description: "Are you prepared for a potential learning curve, especially if you're used to Windows or macOS, and possibly need to learn some new ways of doing things or use the command line for certain tasks?",
+    question: "Willingness to Learn",
+    description: "Are you open to learning new workflows or using the command line?",
     options: [
-      { value: "excited", label: "I'm excited to learn new things", score: 2 },
-      { value: "willing", label: "I'm willing to learn if needed", score: 1 },
-      { value: "minimal", label: "I prefer minimal learning required", score: 0 },
-      { value: "avoid", label: "I want to avoid learning new systems", score: -2 }
+      { value: "excited",  label: "Excited to learn",      score: 2 },
+      { value: "willing",  label: "Willing if needed",      score: 1 },
+      { value: "minimal",  label: "Prefer minimal learning",score: 0 },
+      { value: "avoid",    label: "Prefer to avoid learning",score: -2 }
     ]
   },
   {
     id: 5,
-    question: "Technical Troubleshooting Comfort",
-    description: "How comfortable are you with searching online forums, reading documentation, and potentially performing some troubleshooting steps yourself when issues arise?",
+    question: "Technical Confidence",
+    description: "How comfortable are you troubleshooting issues with online docs or forums?",
     options: [
-      { value: "expert", label: "Very comfortable, I enjoy troubleshooting", score: 2 },
-      { value: "comfortable", label: "Comfortable with basic troubleshooting", score: 1 },
-      { value: "limited", label: "Limited comfort, prefer simple solutions", score: 0 },
-      { value: "avoid", label: "I avoid technical troubleshooting", score: -2 }
+      { value: "expert",      label: "Very comfortable",             score: 2 },
+      { value: "comfortable", label: "Comfortable with basics",      score: 1 },
+      { value: "hesitant",    label: "Somewhat hesitant",            score: 0 },
+      { value: "avoid",       label: "Prefer no troubleshooting",     score: -2 }
     ]
   },
   {
     id: 6,
-    question: "\"Just Works\" Expectation",
-    description: "Do you expect everything to \"just work\" out of the box with minimal configuration, or are you okay with a bit of tinkering to get things exactly how you want them?",
+    question: "Configuration Expectation",
+    description: "Do you expect things to work out-of-the-box or enjoy tweaking?",
     options: [
-      { value: "tinker", label: "I enjoy tinkering and customizing", score: 2 },
-      { value: "some", label: "Some tinkering is fine", score: 1 },
-      { value: "minimal", label: "Prefer minimal configuration needed", score: 0 },
-      { value: "justworks", label: "Everything must just work immediately", score: -2 }
+      { value: "tinker",   label: "Enjoy customizing",      score: 2 },
+      { value: "some",     label: "Some tweaking is fine",  score: 1 },
+      { value: "minimal",  label: "Prefer a more Out-Of-The-Box setup",   score: 0 },
+      { value: "justworks",label: "Must just work",         score: -2 }
     ]
   },
   {
     id: 7,
-    question: "Proprietary Peripheral Use",
-    description: "Do you rely heavily on proprietary peripherals with complex drivers or companion software that might not have Linux equivalents (e.g., high-end gaming mice with custom macro software, specific external sound cards)?",
+    question: "Peripheral Compatibility",
+    description: "Do you rely on proprietary peripherals (e.g. gaming mice or audio gear) with complex drivers?",
     options: [
-      { value: "basic", label: "Basic peripherals only", score: 2 },
-      { value: "few", label: "A few specialized peripherals", score: 1 },
-      { value: "several", label: "Several proprietary peripherals", score: -1 },
-      { value: "many", label: "Many complex proprietary devices", score: -2 }
+      { value: "basic",   label: "Only basic devices",         score: 2 },
+      { value: "few",     label: "A few specialized devices",   score: 1 },
+      { value: "several", label: "Several proprietary devices", score: -1 },
+      { value: "many",    label: "Many complex devices",        score: -2 }
     ]
   },
   {
     id: 8,
-    question: "Professional Software Requirements",
-    description: "Is your profession heavily reliant on a specific, industry-standard software suite that is exclusively designed for Windows or macOS and has no viable Linux alternative?",
+    question: "Professional Software Flexibility",
+    description: "Does your job require industry-standard Windows/macOS software with no Linux alternative?",
     options: [
-      { value: "flexible", label: "My work is platform-flexible", score: 2 },
-      { value: "alternatives", label: "Viable alternatives exist", score: 1 },
-      { value: "some", label: "Some dependency on proprietary software", score: -1 },
-      { value: "critical", label: "Critical dependency on Windows/macOS software", score: -2 }
+      { value: "flexible",    label: "Platform-flexible",           score: 2 },
+      { value: "alternatives",label: "Viable alternatives exist",   score: 1 },
+      { value: "some",        label: "Some dependency",             score: -1 },
+      { value: "critical",    label: "Critical dependency",         score: -2 }
     ]
   },
   {
     id: 9,
-    question: "Time Commitment for Setup",
-    description: "Are you willing to invest some time upfront into researching distributions, installing the OS, and potentially setting up your preferred applications and environment?",
+    question: "Time for Setup",
+    description: "Can you invest time upfront to research distros, install and configure your environment?",
     options: [
-      { value: "lots", label: "I have plenty of time and interest", score: 2 },
-      { value: "some", label: "I can dedicate some time to setup", score: 1 },
-      { value: "limited", label: "I have limited time for setup", score: 0 },
-      { value: "none", label: "I have no time for complex setup", score: -2 }
+      { value: "lots",    label: "Plenty of time",        score: 2 },
+      { value: "some",    label: "Some time available",    score: 1 },
+      { value: "limited", label: "Limited time",          score: 0 },
+      { value: "none",    label: "No time for setup",      score: -2 }
     ]
   },
   {
     id: 10,
-    question: "Dual-Booting Complexity",
-    description: "If you plan to dual-boot, are you aware of the potential complexities and risks involved with partitioning your drive and managing multiple operating systems?",
+    question: "Dual-Boot Experience",
+    description: "Are you comfortable partitioning your drive and managing multiple OS installs?",
     options: [
-      { value: "linux-only", label: "Planning to go Linux-only", score: 2 },
-      { value: "experienced", label: "Experienced with dual-booting", score: 1 },
-      { value: "aware", label: "Aware but haven't done it", score: 0 },
-      { value: "unaware", label: "Not aware of the complexities", score: -1 }
+      { value: "linux_only", label: "Going Linux-only",     score: 2 },
+      { value: "experienced",label: "Experienced with dual-boot", score: 1 },
+      { value: "aware",      label: "Aware but never tried",    score: 0 },
+      { value: "unaware",    label: "Not aware of complexities", score: -1 }
     ]
   },
   {
     id: 11,
-    question: "Software Availability",
-    description: "Are you comfortable with potentially needing to find open-source alternatives for some of your current Windows/macOS applications, or using compatibility layers like WINE, which don't always work perfectly?",
+    question: "Alternative Software Use",
+    description: "Are you okay using open-source replacements or compatibility layers (e.g. WINE)?",
     options: [
-      { value: "prefer", label: "I prefer open-source alternatives", score: 2 },
-      { value: "comfortable", label: "Comfortable finding alternatives", score: 1 },
-      { value: "hesitant", label: "Hesitant but willing to try", score: 0 },
-      { value: "unwilling", label: "I need my exact current applications", score: -2 }
+      { value: "prefer",     label: "Prefer open-source",     score: 2 },
+      { value: "comfortable",label: "Comfortable exploring",  score: 1 },
+      { value: "hesitant",   label: "Hesitant but willing",    score: 0 },
+      { value: "unwilling",  label: "Need exact same apps",   score: -2 }
     ]
   },
   {
     id: 12,
     question: "Support Expectations",
-    description: "Do you expect direct, official customer support for your operating system, or are you comfortable relying on community forums and online documentation for help?",
+    description: "Do you need official vendor support or are you OK with community-based help?",
     options: [
-      { value: "community", label: "I prefer community support", score: 2 },
-      { value: "comfortable", label: "Comfortable with community support", score: 1 },
-      { value: "prefer-official", label: "I prefer official support but can adapt", score: 0 },
-      { value: "need-official", label: "I need official customer support", score: -2 }
+      { value: "community",    label: "Prefer community support",score: 2 },
+      { value: "comfortable",  label: "Comfortable with both",  score: 1 },
+      { value: "official_ok",  label: "Prefer official but flexible", score: 0 },
+      { value: "need_official",label: "Need official support",   score: -2 }
     ]
   }
 ]

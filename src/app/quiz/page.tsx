@@ -79,7 +79,7 @@ export default function QuizPage() {
               {result.description}
             </p>
             <p className="text-sm text-gray-400">
-              Your score: {totalScore} / 24
+              Your score: {totalScore} / {questions.length * 2}
             </p>
           </div>
 
