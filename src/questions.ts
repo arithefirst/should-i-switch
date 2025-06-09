@@ -2,12 +2,12 @@ const questions = [
   {
     id: 1,
     question: "Modern Gaming Requirements",
-    description: "How often do you play AAA titles that use kernel level anti-cheat systems (e.g. Valorant, Fortnite)?",
+    description: "How often do you play AAA titles that use kernel level anticheat systems (e.g. Valorant, Fortnite)?",
     options: [
       { value: "never",      label: "I don't game",                        score: 2 },
       { value: "casual",     label: "Occasional older/indie gaming",      score: 1 },
       { value: "regular",    label: "Regular modern gaming/High preformance AAA gaming (non-competitive)", score: 0 },
-      { value: "competitive",label: "Competitive Gaming w/ Anticheats",            score: -2 }
+      { value: "competitive",label: "Competitive Gaming w/ Kernel Level Anticheats",            score: -2 }
     ]
   },
   {
