@@ -6,8 +6,8 @@ const questions = [
     options: [
       { value: "never",      label: "I don't game",                        score: 2 },
       { value: "casual",     label: "Occasional older/indie gaming",      score: 1 },
-      { value: "regular",    label: "Regular modern gaming (non-competitive)", score: 0 },
-      { value: "competitive",label: "Competitive AAA gaming",            score: -2 }
+      { value: "regular",    label: "Regular modern gaming/High preformance AAA gaming (non-competitive)", score: 0 },
+      { value: "competitive",label: "Competitive Gaming w/ Anticheats",            score: -2 }
     ]
   },
   {
