@@ -19,7 +19,7 @@ A simple website to help users decide wether or not switching to Linux is a viab
 
 1. Clone the repo  
    ```bash
-   git clone https://github.com/your-username/should-i-switch.git
+   git clone https://github.com/arithefirst/should-i-switch.git
    cd should-i-switch
    ```
 2. Install dependencies  
